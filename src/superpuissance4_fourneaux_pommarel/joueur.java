@@ -22,15 +22,29 @@ public class joueur {
         Nom = Joueur;
     }
     
+    /**
+     *affecte la couleur au joueur
+     * @param couleur
+     * @return
+     */
     public String affecterCouleur(String couleur) {
         Couleur = couleur;
         return Couleur;
     }
     
+    /**
+     *Permet de faire varier nombreJetonsRestants en fonction de la taille du tableau dynamique
+     * @return
+     */
     public int nombreJetonsRestants () {
         int a = reserveJetons.size();
         return a;
     }
+
+    /**
+     *Ajoute le jeton passé en paramètre à la liste ReserveJetons
+     * @param a
+     */
     public void ajouterJeton (Jeton a) {
         reserveJetons.add(a);
         
