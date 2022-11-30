@@ -12,4 +12,36 @@ package superpuissance4_fourneaux_pommarel;
 public class PlateauDeJeu {
     Cellulegrille[][] grille = new Cellulegrille [6][7];
     
+    public PlateauDeJeu () {
+        for (int i = 0;i<7;i++) {
+            for (int j = 0; j<6; j++) {
+                grille [j][i] = new Cellulegrille();
+            }
+            
+        }
+        
+    }
+    public Jeton ajouterJetonDansColonne(Jeton jt, int i) {
+        
+        
+        
+        
+        
+        
+    
+        
+    }
+    
+    public boolean grilleremplie(){
+         for (int i = 0;i<7;i++) {
+            for (int j = 0; j<6; j++) {
+                if (Cellulegrille[j][i] == null) {
+                    return false;    
+                }
+                El
+            }
+            
+        }
+    }
+    
 }
