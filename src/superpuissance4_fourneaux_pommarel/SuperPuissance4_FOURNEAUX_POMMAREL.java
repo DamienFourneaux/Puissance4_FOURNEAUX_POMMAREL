@@ -13,7 +13,15 @@ public class SuperPuissance4_FOURNEAUX_POMMAREL {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+     public static void main(String[] args) {
+        
+        joueur j1 = new joueur("quentin");
+        joueur j2 = new joueur("damien");
+        
+        partie Partie = new partie(j1, j2);
+
+        Partie.initialiserPartie();
+        Partie.lancerPartie();
         
     }
     
