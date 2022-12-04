@@ -11,6 +11,7 @@ package superpuissance4_fourneaux_pommarel;
  */
 public class Jeton {
     private String couleur;
+    
    public Jeton(String Couleur){
        couleur=Couleur;
        
