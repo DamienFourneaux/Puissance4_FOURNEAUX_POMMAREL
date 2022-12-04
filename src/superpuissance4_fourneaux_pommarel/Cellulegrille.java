@@ -35,15 +35,19 @@ public class Cellulegrille {
      * @return 
      */
 public String lirecouleurjeton(){
-    String motcle="jaune";
-    if (jetonCourant==null){
-        motcle="vide";
+    if (presencejeton() == true){
+        return jetonCourant.lireCouleur();
+    }else{
+        return "vide";
     }
-    return motcle;
 }
 public void placertrounoir(){
     avoirtrounoir=true;
 
+}
+
+public void ajouterjeton(Jeton jt){
+    jetonCourant = jt;
 }
 public void supprimertrounoir(){
     avoirtrounoir=false;
@@ -62,11 +66,11 @@ public boolean presencetrounoir(){
  * @return 
  */
 public Jeton recupererjeton(){
-Jeton stockjetcourant;
-      stockjetcourant=jetonCourant;
-      jetonCourant=null;
+    Jeton stockjetcourant;
+    stockjetcourant=jetonCourant;
+    jetonCourant=null;
         
-return stockjetcourant;
+    return stockjetcourant;
 }
 public void supprimerjeton(){
     jetonCourant=null;
