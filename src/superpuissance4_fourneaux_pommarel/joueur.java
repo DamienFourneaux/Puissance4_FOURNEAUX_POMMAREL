@@ -27,9 +27,16 @@ public class joueur {
      * @param couleur
      * @return
      */
-    public String affecterCouleur(String couleur) {
-        Couleur = couleur;
+    
+    public String getCouleur(){
         return Couleur;
+    }
+    
+    public String getNom(){
+        return Nom;
+    }
+    public void affecterCouleur(String couleur) {
+        Couleur = couleur;
     }
     
     /**
@@ -47,7 +54,12 @@ public class joueur {
      */
     public void ajouterJeton (Jeton a) {
         reserveJetons.add(a);
-        
+    }
+    
+    public Jeton prendreUnJeton(){
+        Jeton jt = reserveJetons.get(0);
+        reserveJetons.remove(0);
+        return jt;
     }
     
     public void obtenirDesintegrateur() {
