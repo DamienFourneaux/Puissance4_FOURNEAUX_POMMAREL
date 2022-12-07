@@ -14,6 +14,9 @@ public class PlateauDeJeu {
     int Ligne = 6;
     int Colonne = 7;
     
+    /**
+     * Cette méthode créé le plateau de jeu de 7 colonnes et 6 lignes
+     */
     public PlateauDeJeu () {
         for (int i = 0;i<6;i++) {
             for (int j = 0; j<7; j++) {
@@ -24,6 +27,12 @@ public class PlateauDeJeu {
         
     }
     
+    /**
+     * Permet d'ajouter un jeton dans une colonne et de savoir la ligne du jeton placé
+     * @param jt
+     * @param i
+     * @return ligne du jeton
+     */
     public int ajouterJetonDansColonne(Jeton jt, int i) {
         int ligne = 100;
         if(colonneremplie(i) == false){
@@ -43,6 +52,11 @@ public class PlateauDeJeu {
         return ligne;
     }
         
+    /**
+     * Permet de savoir si la colonne est remplie ou pas
+     * @param i
+     * @return booléan
+     */
     public boolean colonneremplie(int i){
         for(int k = 0; k < Ligne; k++){
             if (grille[k][i].getJetonCourant() == null){
@@ -52,6 +66,10 @@ public class PlateauDeJeu {
         return true;
     }
     
+    /**
+     * Permet de savoir si la grille est remplie ou pas
+     * @return boolean
+     */
     public boolean grilleremplie(){
         for (int i = 0;i<6;i++) {
             for (int j = 0; j<7; j++) {
@@ -64,6 +82,9 @@ public class PlateauDeJeu {
         return true;
     }
     
+    /**
+     * Permet d'afficher la grille sur la console avec les couleurs des jetons placé sur la grille
+     */
     public void afficherGrilleSurConsole(){
         
         for (int k = 0; k < 6; k++){
@@ -78,6 +99,12 @@ public class PlateauDeJeu {
         }    
     }
     
+    /**
+     * Permet de savoir si une case est remplie par un jeton ou pas.
+     * @param x
+     * @param y
+     * @return
+     */
     public boolean presenceJeton(int x, int y){
         if(grille[x][y].presencejeton()){
             return true;
@@ -86,10 +113,22 @@ public class PlateauDeJeu {
         }
     }
     
+    /**
+     * Permet de lire la couleur du jeton
+     * @param x
+     * @param y
+     * @return couleur
+     */
     public String lireCouleurDuJeton(int x, int y){
         return grille[x][y].lirecouleurjeton();
     }
     
+    /**
+     * Permet de savoir si une grille est gagnante pour la couleur en paramètre.
+     * Utilise différentes sous méthodes pour savoir les différentes possibilités de gagner.
+     * @param couleur
+     * @return
+     */
     public boolean etreGagnantePourCouleur(String couleur){
         return ligneGagnantePourCouleur(couleur) == true || colonneGagnantePourCouleur(couleur)== true || diagonaleMontanteGagnantePourCouleur(couleur) == true || diagonaleDesencanteGagnantePourCouleur(couleur) == true;
     }
@@ -147,11 +186,18 @@ public class PlateauDeJeu {
         }
     }
     
+    /**
+     * Permet de faire descendre les jetons lorsqu'un jeton est récupéré.
+     */
     public void tasserGrille(){
         for(int k = 0; k < Ligne; k++){
             tasserColonne(k);
         }
     }
+    
+    //Les méthodes suivantes permettent de savoir s'il y a un trou noir, désintégrateur sur la case
+    
+    
     
     public boolean presenceTrouNoir(int x, int y){
         return grille[x][y].presencetrounoir();
