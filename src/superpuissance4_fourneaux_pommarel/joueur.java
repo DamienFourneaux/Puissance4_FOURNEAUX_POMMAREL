@@ -56,19 +56,28 @@ public class joueur {
         reserveJetons.add(a);
     }
     
+    /**
+     * Extrait un jeton de la réserve de jetons 
+     * @return
+     */
     public Jeton prendreUnJeton(){
         Jeton jt = reserveJetons.get(0);
         reserveJetons.remove(0);
         return jt;
     }
     
+    /**
+     * Permet de savoir si un désintégrateur a été gagné
+     */
     public void obtenirDesintegrateur() {
         nombreDesintegrateurs+=1;
         System.out.println("Vous venez de gagner un désintégrateur. Vous avez" + nombreDesintegrateurs + "désintégrateur(s).");
         
     }
    
-    
+    /**
+     * Cette méthode permet d'utiliser un désintégrateur.
+     */
     public void utiliserDesintegrateurs() {
         nombreDesintegrateurs-= 1;
         System.out.println("Vous venez d'utiliser un désintégrateur. Il vous reste " + nombreDesintegrateurs + "désintégrateur(s).");
