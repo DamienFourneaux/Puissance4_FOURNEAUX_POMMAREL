@@ -12,12 +12,15 @@ import superpuissance4_fourneaux_pommarel.Jeton;
  */
 public class Cellulegrille {
     private Jeton jetonCourant= null;
-    private boolean avoirtrounoir=false;
+    private boolean avoirtrounoir=false; //Les variables sont en private pour être utilisées uniquement dans cette classe 
     private boolean avoirdesintegrateur=false;
     boolean jetonpresent=false;
     
-    
-    public boolean presencejeton (){
+    /**
+     * Permet de savoir si un jeton est présent sur la case ou pas
+     * @return true or false
+     */
+    public boolean presencejeton (){ 
         boolean Presencejeton = false;
         if (jetonCourant!=null){
              Presencejeton=true;
@@ -29,10 +32,11 @@ public class Cellulegrille {
     public Jeton getJetonCourant() {
         return jetonCourant;
     }
+    
     /**
      * Permet de savoir si il y a un jeton dans une case 
      * et si il y en a un dis la couleur de celui-ci
-     * @return 
+     * @return rouge or jaune
      */
 public String lirecouleurjeton(){
     if (presencejeton() == true){
@@ -41,7 +45,11 @@ public String lirecouleurjeton(){
         return "vide";
     }
 }
-public void placertrounoir(){
+
+    /**
+     * Permet de placer un trou noir sur une case
+     */
+    public void placertrounoir(){
     avoirtrounoir=true;
 
 }
@@ -55,7 +63,7 @@ public void supprimertrounoir(){
 }
 /**
  * Permet de verifier la presence d'un trou noir en renvoyant un boolean
- * @return 
+ * @return boolean 
  */
 public boolean presencetrounoir(){
     return avoirtrounoir;
@@ -84,7 +92,11 @@ public void placerdesintegrateur(){
 public void supprimerdesintegrateur(){
     avoirdesintegrateur=false;
 }
-public void activertrounoir(){
+
+    /**
+     *Active le trou noir, supprime le jeton sur la case du trou noir
+     */
+    public void activertrounoir(){
     supprimerjeton();
     supprimertrounoir();
           
