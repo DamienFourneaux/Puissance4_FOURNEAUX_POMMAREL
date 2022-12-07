@@ -16,10 +16,19 @@ public class Jeton {
        couleur=Couleur;
        
    }
-    public String lireCouleur() {
+
+    /**
+     *Accesseur lecture
+     * @return couleur (R ou J)
+     */
+    public String lireCouleur() { 
         return couleur;
     }
 
+    /**
+     * Méthode toString qui permet de renvoyer un texte formaté.
+     * @return
+     */
     @Override
     public String toString() {
         return "Jeton{" + "couleur=" + couleur + '}';
