@@ -13,6 +13,8 @@ import java.util.Scanner;
 /**
  *
  * @author quent
+ * 
+ * Cette classe permet de mettre en commun toutes les classes précédemment créées afin de créer une partie. 
  */
 public class partie  {
     private joueur [] listeJoueurs = new joueur[2];
@@ -24,7 +26,10 @@ public class partie  {
         listeJoueurs[1]=j2;
     }
     
-   public void attribuerCouleurAuxJoueurs(){
+    /**
+     * Permet d'associer aux deux joueurs une couleur aléatoire.
+     */
+    public void attribuerCouleurAuxJoueurs(){
        Random n =new Random();
        int var=n.nextInt(2);
        if (var==0){
@@ -36,7 +41,11 @@ public class partie  {
        }
    }
    
-    public void créeretaffecterJeton(joueur j1){
+    /**
+     * Créé 30 jetons à chauqe joueur de sa couleur (précédemmment associé grâce à la méthode précédente)
+     * @param j1
+     */
+    public void créeretaffecterJeton(joueur j1){ 
         if("rouge"==j1.getCouleur()){
             for(int i=0;i<30;i++){
                 Jeton stockjeton=new Jeton("rouge");
@@ -51,6 +60,9 @@ public class partie  {
         }
     }
     
+    /**
+     * Place les trous noirs et les désintégrateurs aléatoirement sur la grille.
+     */
     public void placerTrousNoirsEtDesintegrateurs(){
         Random r = new Random();
         int tn = 5;
@@ -84,6 +96,9 @@ public class partie  {
         }
     }
     
+    /**
+     * Permet d'initialiser la partie
+     */
     public void initialiserPartie(){
         attribuerCouleurAuxJoueurs();
         créeretaffecterJeton(listeJoueurs[0]);
@@ -92,6 +107,9 @@ public class partie  {
         plateau.afficherGrilleSurConsole();
     }
     
+    /**
+     * Permet de lancer la partie
+     */
     public void lancerPartie(){
         int cpt = -1;
         Scanner sc = new Scanner(System.in);      
@@ -155,6 +173,9 @@ public class partie  {
         System.out.println("partie fini");
     }
     
+    /**
+     * Permet d'untiliser un d"se=intégrateur précédemment récupéré avoir de détruire un jeton
+     */
     public void desintegrerJeton(){
         Scanner sc = new Scanner(System.in);
         
@@ -177,6 +198,9 @@ public class partie  {
         }
     }
     
+    /**
+     * Permet de récupérer un jeton dan la grile
+     */
     public void recupererJeton(){
         Scanner sc = new Scanner(System.in);
         
@@ -198,6 +222,9 @@ public class partie  {
         plateau.tasserGrille();
     }
     
+    /**
+     * Permet de jouer un jeton sur la grille
+     */
     public void jouerJeton(){
         int colonne = 100;
         int l;
